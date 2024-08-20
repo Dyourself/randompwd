@@ -1,6 +1,7 @@
-# randompwd
+# 随机密码生成
+我平时会注册许多账号，担心别人提供的这种服务并不随机，假如是在一个密码库取出来的，那么账号就有风险
 部署在cloudflare的一个提供生成随机密码的服务，可以选择生成数量和字符集
-步骤
+步骤如下
 
 ![image](https://github.com/user-attachments/assets/b92e34db-f97e-4858-8e65-8d6dffdf870a)
 ![image](https://github.com/user-attachments/assets/15916884-b5c9-45c0-85e5-cf45319394e9)

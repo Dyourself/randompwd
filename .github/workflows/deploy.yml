@@ -1,0 +1,24 @@
+name: Deploy Cloudflare Worker
+
+on:
+  push:
+    branches:
+      - main  # 当 main 分支有 push 时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      - name: Publish to Cloudflare Workers
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_RANDOM_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_SCRIPT_NAME: ${{ secrets.CF_SCRIPT_NAME }}
+        run: wrangler publish path/to/your/worker/script.js
